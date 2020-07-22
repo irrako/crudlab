@@ -2,6 +2,7 @@
 
 var express = require('express');
 var router = express.Router();
+var USER = require("../database/user");
 
 router.post('/user', async(req, res) => {
 var params = req.body;
