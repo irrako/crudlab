@@ -7,5 +7,5 @@ registerdate: Date,
 sex: String,
 address : String
 });
-var USER = mongoose.model("user", USERSCHEMA);
-module.exports = USER;
+var USERS = mongoose.model("users", USERSCHEMA);
+module.exports = USERS;

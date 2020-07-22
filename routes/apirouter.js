@@ -1,13 +1,21 @@
 var express = require('express');
 var router = express.Router();
-var USER = require("../database/user");
 
-router.post('/user', async(req, res) => {
- var params = req.body;
- params["registerdate"] = new Date();
- var users = new USER(params);
- var result = await users.save();
- res.status(200).json(result);
+ router.post('/users', (req, res) => {
+ var datos = req.body;
+ var registerdate = datos.date.split(",");
+ var user = {};
+ user["name"] = datos.name;
+ user["email"] = datos.email;
+ user["password"] = datos.password;
+ user["sex"] = datos.sex;
+ user["registerdate"] = new Date ();
+ user["address"] = datos.address;
+ 
+ var newuser = new USER(user);
+ newuser.save().then(() => {
+  res.status(200).json({"msn" : "Usuario Registrado"});
+ });
 });
 
 module.exports = router;
