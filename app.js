@@ -24,6 +24,13 @@ app.use('/v1.0/api', apireRouter);
 //app.use('/', indexRouter);
 //app.use('/users', usersRouter);
 
+// corriendo 8000
+
+var port = 8000;
+app.listen(port, () => {
+console.log("running in " + port);
+});
+
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   next(createError(404));
@@ -42,9 +49,3 @@ app.use(function(err, req, res, next) {
 
 module.exports = app;
 
-// puerto 8000
-
-var port = 8000;
-app.listen(port, () => {
-console.log("running in " + port);
-});
