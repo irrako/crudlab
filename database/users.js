@@ -1,11 +1,11 @@
-const mongoose = require("./connect");
+var mongoose = require("./connect");
 var USERSCHEMA = {
-name : String,
-email : String,
-password : String,
+name: String,
+email: String,
+password: String,
 registerdate: Date,
-sex : String,
+sex: String,
 address : String
 }
-const USERS = mongoose.model("users", USERSCHEMA);
-module.exports = USERS;
+var USERS = mongoose.model("user", USERSCHEMA);
+module.exports = USER;
