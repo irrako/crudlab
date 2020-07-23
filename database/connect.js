@@ -1,6 +1,6 @@
 var mongoose = require('mongoose');
 mongoose.connect("mongodb://172.28.0.2:27017/crud", {useNewUrlParser: true});
-var db = mogoose.connection;
+var db = mongoose.connection;
 db.on("error", () => {
     console.log("ERROR no se puede conectar al servidor");
 });
